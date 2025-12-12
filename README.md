@@ -823,14 +823,6 @@ netstat -ano | findstr "8082 8083 8084 8085"
 
 ---
 
-## 📚 Documentação Adicional
-
-- [📋 Exemplos de Requisições](EXEMPLOS_REQUISICOES.md) - Exemplos práticos de todas as APIs
-- [📊 Relatório de Análise](RELATORIO_ANALISE_SISTEMA.md) - Análise técnica detalhada
-- [✅ Relatório Final de Verificação](RELATORIO_FINAL_VERIFICACAO.md) - Checklist completo
-
----
-
 ## 🎓 Habilidades Demonstradas
 
 ### **🏗️ Arquitetura de Software**

@@ -1,0 +1,32 @@
+server:
+  port: ${SERVER_PORT:8085}
+
+spring:
+  application:
+    name: bff-agendador-tarefas
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${JWT_JWK_SET_URI:http://localhost:8082/.well-known/jwks.json}
+
+microservices:
+  cadastro-usuarios:
+    url: ${MICROSERVICE_CADASTRO_USUARIOS_URL:http://localhost:8082}
+  agendador-tarefas:
+    url: ${MICROSERVICE_AGENDADOR_TAREFAS_URL:http://localhost:8083}
+  notificacao-email:
+    url: ${MICROSERVICE_NOTIFICACAO_EMAIL_URL:http://localhost:8084}
+
+resilience4j:
+  circuitbreaker:
+    instances:
+      tarefas:
+        registerHealthIndicator: true
+        slidingWindowSize: 10
+        minimumNumberOfCalls: 5
+        permittedNumberOfCallsInHalfOpenState: 3
+        automaticTransitionFromOpenToHalfOpenEnabled: true
+        waitDurationInOpenState: 10s
+        failureRateThreshold: 50
+        eventConsumerBufferSize: 10

@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nova Tarefa Agendada</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f4f8; /* Cor de fundo mais suave */
+        }
+        .email-wrapper {
+            width: 100%;
+            padding: 40px 20px;
+            background-color: #f0f4f8;
+        }
+        .container {
+            width: 100%;
+            max-width: 650px;
+            margin: 0 auto;
+            background: #ffffff;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px 30px;
+            text-align: center;
+        }
+        .header-icon {
+            margin: 0 auto 15px;
+            font-size: 36px; /* Aumenta o tamanho do emoji */
+        }
+        .header h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 700;
+            color: #ffffff;
+        }
+        .header p {
+            margin: 10px 0 0;
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        .content {
+            padding: 40px 30px;
+        }
+        .greeting {
+            font-size: 18px;
+            color: #2d3748;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        .intro-text {
+            font-size: 16px;
+            color: #4a5568;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        .task-card {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin: 30px 0;
+            text-align: center;
+        }
+        .task-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin: 0 0 10px;
+        }
+        .task-subtitle {
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+            margin: 0;
+        }
+        .details-grid {
+            display: table;
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 15px 0;
+            margin: 30px 0;
+        }
+        .detail-card {
+            display: table-cell;
+            width: 50%;
+            background: #f7fafc;
+            padding: 20px;
+            border-radius: 10px;
+            border-left: 4px solid #667eea;
+        }
+        .detail-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .detail-icon {
+            font-size: 24px;
+            margin-right: 12px;
+            line-height: 1; /* Alinha o emoji */
+        }
+        .detail-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #718096;
+            font-weight: 600;
+        }
+        .detail-value {
+            font-size: 16px;
+            color: #2d3748;
+            font-weight: 600;
+        }
+        .description-section {
+            background: #f7fafc;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+            border-left: 4px solid #48bb78;
+        }
+        .description-title {
+            display: flex;
+            align-items: center;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #48bb78;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+        .description-icon {
+            font-size: 18px;
+            margin-right: 10px;
+            line-height: 1; /* Alinha o emoji */
+        }
+        .description-text {
+            font-size: 15px;
+            color: #4a5568;
+            line-height: 1.7;
+            margin: 0;
+        }
+        .priority-section {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .priority-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #718096;
+            font-weight: 600;
+            margin-bottom: 12px;
+        }
+        .priority-badge {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+        }
+        .priority-BAIXA { background: linear-gradient(135deg, #48bb78, #38a169); color: white; }
+        .priority-MEDIA { background: linear-gradient(135deg, #ed8936, #dd6b20); color: white; }
+        .priority-ALTA { background: linear-gradient(135deg, #f56565, #e53e3e); color: white; }
+        .priority-URGENTE { background: linear-gradient(135deg, #e53e3e, #c53030); color: white; }
+
+        .alert-box {
+            display: flex;
+            align-items: flex-start;
+            background: #fffaf0;
+            border-left: 4px solid #f6ad55;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        .alert-icon {
+            font-size: 24px;
+            margin-right: 15px;
+            line-height: 1.6; /* Ajusta o alinhamento vertical */
+        }
+        .alert-content .alert-title {
+            font-weight: 700;
+            color: #c05621;
+            margin: 0 0 5px;
+            font-size: 15px;
+        }
+        .alert-content .alert-text {
+            color: #c05621;
+            margin: 0;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        .action-button-container {
+            text-align: center;
+            margin: 40px 0 20px;
+        }
+        .action-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white !important;
+            padding: 16px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 16px;
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.3);
+        }
+        .footer {
+            background: #f7fafc;
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid #e2e8f0;
+        }
+        .footer-logo {
+            font-size: 20px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 15px;
+        }
+        .footer-text {
+            font-size: 14px;
+            color: #718096;
+            margin: 8px 0;
+        }
+        .footer-links {
+            margin: 20px 0;
+        }
+        .footer-link {
+            color: #667eea;
+            text-decoration: none;
+            margin: 0 12px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+        .divider {
+            height: 1px;
+            background-color: #e2e8f0;
+            margin: 40px 0;
+        }
+        @media only screen and (max-width: 600px) {
+            .content { padding: 30px 20px; }
+            .details-grid, .detail-card { display: block; width: 100%; }
+            .detail-card { margin-bottom: 15px; }
+            .header h1 { font-size: 26px; }
+            .task-title { font-size: 22px; }
+        }
+    </style>
+</head>
+<body>
+<div class="email-wrapper">
+    <div class="container">
+        <div class="header">
+            <div class="header-icon">✅</div>
+            <h1>Nova Tarefa Agendada</h1>
+            <p>Uma nova atividade foi registrada em seu sistema.</p>
+        </div>
+
+        <div class="content">
+            <p class="greeting">Olá!</p>
+            <p class="intro-text">Uma nova tarefa foi adicionada ao seu sistema. Confira os detalhes abaixo e organize-se para concluí-la no prazo.</p>
+
+            <div class="task-card">
+                <h2 class="task-title" th:text="${tituloTarefa}">Implementar Sistema de Notificações</h2>
+                <p class="task-subtitle">Tarefa agendada para execução</p>
+            </div>
+
+            <div class="details-grid">
+                <div class="detail-card">
+                    <div class="detail-header">
+                        <span class="detail-icon">🗓️</span>
+                        <div class="detail-label">Data</div>
+                    </div>
+                    <div class="detail-value" th:text="${#temporals.format(dataEvento, 'dd/MM/yyyy')}">18/11/2025</div>
+                </div>
+                <div class="detail-card">
+                    <div class="detail-header">
+                        <span class="detail-icon">🕐</span>
+                        <div class="detail-label">Horário</div>
+                    </div>
+                    <div class="detail-value" th:text="${#temporals.format(dataEvento, 'HH:mm')}">09:00</div>
+                </div>
+            </div>
+
+            <div class="description-section">
+                <div class="description-title">
+                    <span class="description-icon">📝</span>
+                    <span>Descrição da Tarefa</span>
+                </div>
+                <p class="description-text" th:text="${descricaoTarefa}">Desenvolver e implementar um sistema completo de notificações por e-mail para alertar os usuários sobre novas tarefas e eventos importantes.</p>
+            </div>
+
+            <div class="priority-section">
+                <div class="priority-label">Nível de Prioridade</div>
+                <span class="priority-badge" th:classappend="'priority-' + ${prioridade}" th:text="${prioridade}">MÉDIA</span>
+            </div>
+
+            <div class="divider"></div>
+
+            <div class="alert-box">
+                <div class="alert-icon">⚠️</div>
+                <div class="alert-content">
+                    <div class="alert-title">Lembrete Importante</div>
+                    <p class="alert-text">Por favor, organize seu tempo para concluir esta atividade no prazo. Em caso de dúvidas, entre em contato com o gestor responsável.</p>
+                </div>
+            </div>
+
+            <div class="action-button-container">
+                <a href="#" class="action-button">Visualizar no Sistema</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <div class="footer-logo">📋 Sistema de Gerenciamento</div>
+            <p class="footer-text">Este é um e-mail automático. Por favor, não responda.</p>
+            <div class="footer-links">
+                <a href="#" class="footer-link">Central de Ajuda</a>
+                <a href="#" class="footer-link">Política de Privacidade</a>
+            </div>
+            <p class="footer-text" style="font-size: 12px; color: #a0aec0; margin-top: 20px;">
+                © 2025 Sistema de Gerenciamento. Todos os direitos reservados.
+            </p>
+        </div>
+    </div>
+</div>
+</body>
+</html>

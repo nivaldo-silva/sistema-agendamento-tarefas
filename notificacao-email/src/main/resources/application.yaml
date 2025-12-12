@@ -1,0 +1,39 @@
+server:
+  port: 8084
+
+spring:
+  application:
+    name: notificacao-email
+
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: ${JWT_JWK_SET_URI:http://localhost:8082/.well-known/jwks.json}
+
+  mail:
+    host: ${MAIL_HOST:smtp.gmail.com}
+    port: ${MAIL_PORT:587}
+    username: ${MAIL_USERNAME:nivaldoluizadm@gmail.com}
+    password: ${MAIL_PASSWORD:}
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+          ssl:
+            trust: ${MAIL_HOST:smtp.gmail.com}
+          connectiontimeout: 5000
+          timeout: 3000
+          writetimeout: 5000
+
+logging:
+  level:
+    io.github.nivaldosilva: DEBUG
+
+envio:
+  email:
+    remetente: ${EMAIL_REMETENTE:nivaldoluizadm@gmail.com}
+    nomeRemetente: ${NOME_REMETENTE:Nivaldo Silva}

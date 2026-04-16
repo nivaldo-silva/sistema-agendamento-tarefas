@@ -1,4 +1,4 @@
-package io.github.nivaldosilva.bff_agendador_tarefas.openapi;
+package io.github.nivaldosilva.bff_agendador_tarefas.docs;
 
 import io.github.nivaldosilva.bff_agendador_tarefas.dto.request.CriarTarefaRequest;
 import io.github.nivaldosilva.bff_agendador_tarefas.dto.response.TarefaResponse;
@@ -16,7 +16,7 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 @Tag(name = "Tarefas", description = "Endpoints para gerenciamento de tarefas")
-public interface TarefaAPI {
+public interface TarefaDocs {
 
     @Operation(
             summary = "Cria uma nova tarefa",

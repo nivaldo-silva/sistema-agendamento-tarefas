@@ -4,7 +4,7 @@ import io.github.nivaldosilva.bff_agendador_tarefas.dto.request.LoginRequest;
 import io.github.nivaldosilva.bff_agendador_tarefas.dto.request.RegistroUsuarioRequest;
 import io.github.nivaldosilva.bff_agendador_tarefas.dto.response.LoginResponse;
 import io.github.nivaldosilva.bff_agendador_tarefas.dto.response.UsuarioResponse;
-import io.github.nivaldosilva.bff_agendador_tarefas.openapi.UsuarioAPI;
+import io.github.nivaldosilva.bff_agendador_tarefas.docs.UsuarioDocs;
 import io.github.nivaldosilva.bff_agendador_tarefas.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
-public class UsuarioController implements UsuarioAPI {
+public class UsuarioController implements UsuarioDocs {
 
     private final UsuarioService usuarioService;
 

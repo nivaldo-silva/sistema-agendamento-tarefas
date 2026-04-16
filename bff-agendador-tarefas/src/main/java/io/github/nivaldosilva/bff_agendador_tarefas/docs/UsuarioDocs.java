@@ -1,4 +1,4 @@
-package io.github.nivaldosilva.bff_agendador_tarefas.openapi;
+package io.github.nivaldosilva.bff_agendador_tarefas.docs;
 
 import io.github.nivaldosilva.bff_agendador_tarefas.dto.request.LoginRequest;
 import io.github.nivaldosilva.bff_agendador_tarefas.dto.request.RegistroUsuarioRequest;
@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestHeader;
 
 @Tag(name = "Usuario", description = "Endpoints para autenticação e gerenciamento de usuarios")
-public interface UsuarioAPI {
+public interface UsuarioDocs {
 
     @Operation(
             summary = "Realiza login do usuario",

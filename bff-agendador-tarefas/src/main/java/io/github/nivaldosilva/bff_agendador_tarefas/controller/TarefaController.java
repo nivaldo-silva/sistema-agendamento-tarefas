@@ -2,7 +2,7 @@ package io.github.nivaldosilva.bff_agendador_tarefas.controller;
 
 import io.github.nivaldosilva.bff_agendador_tarefas.dto.request.CriarTarefaRequest;
 import io.github.nivaldosilva.bff_agendador_tarefas.dto.response.TarefaResponse;
-import io.github.nivaldosilva.bff_agendador_tarefas.openapi.TarefaAPI;
+import io.github.nivaldosilva.bff_agendador_tarefas.docs.TarefaDocs;
 import io.github.nivaldosilva.bff_agendador_tarefas.service.TarefaService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -18,7 +18,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/tarefas")
 @RequiredArgsConstructor
-public class TarefaController implements TarefaAPI {
+public class TarefaController implements TarefaDocs {
 
     private final TarefaService tarefaService;
 

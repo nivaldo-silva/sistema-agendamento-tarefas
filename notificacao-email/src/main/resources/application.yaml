@@ -4,6 +4,11 @@ server:
 spring:
   application:
     name: notificacao-email
+  output:
+    ansi:
+      enabled: ALWAYS
+  config:
+    import: optional:file:.env[.properties]
 
   security:
     oauth2:
@@ -12,10 +17,10 @@ spring:
           jwk-set-uri: ${JWT_JWK_SET_URI:http://localhost:8082/.well-known/jwks.json}
 
   mail:
-    host: ${MAIL_HOST:smtp.gmail.com}
-    port: ${MAIL_PORT:587}
-    username: ${MAIL_USERNAME:nivaldoluizadm@gmail.com}
-    password: ${MAIL_PASSWORD:}
+    host: ${MAIL_HOST}
+    port: ${MAIL_PORT}
+    username: ${MAIL_USERNAME}
+    password: ${MAIL_PASSWORD}
     protocol: smtp
     properties:
       mail:
@@ -24,16 +29,24 @@ spring:
           starttls:
             enable: true
           ssl:
-            trust: ${MAIL_HOST:smtp.gmail.com}
+            trust: ${MAIL_HOST}
           connectiontimeout: 5000
           timeout: 3000
           writetimeout: 5000
 
 logging:
+  pattern:
+    console: '%clr(%d{dd-MM-yyyy HH:mm:ss}){faint} %clr(%5p) %clr([%t]){faint} %clr(%-40.40logger){cyan} %clr(:){yellow} %m%n'
   level:
+    root: INFO
     io.github.nivaldosilva: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.mail: DEBUG
+    org.springframework.security: DEBUG
+
 
 envio:
   email:
-    remetente: ${EMAIL_REMETENTE:nivaldoluizadm@gmail.com}
-    nomeRemetente: ${NOME_REMETENTE:Nivaldo Silva}
+    remetente: ${EMAIL_REMETENTE}
+    nomeRemetente: ${NOME_REMETENTE}
+

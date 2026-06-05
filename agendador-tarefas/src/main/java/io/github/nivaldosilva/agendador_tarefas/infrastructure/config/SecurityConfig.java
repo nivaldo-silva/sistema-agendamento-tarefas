@@ -1,4 +1,4 @@
-package io.github.nivaldosilva.agendador_tarefas.config;
+package io.github.nivaldosilva.agendador_tarefas.infrastructure.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

@@ -1,4 +1,4 @@
-package io.github.nivaldosilva.agendador_tarefas.validation;
+package io.github.nivaldosilva.agendador_tarefas.infrastructure.validation;
 
 import jakarta.validation.Constraint;
 import jakarta.validation.Payload;

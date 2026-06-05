@@ -1,4 +1,4 @@
-package io.github.nivaldosilva.cadastro_usuarios.config.security;
+package io.github.nivaldosilva.cadastro_usuarios.infrastructure.config;
 
 import com.nimbusds.jose.jwk.JWKSet;
 import com.nimbusds.jose.jwk.RSAKey;
@@ -8,8 +8,6 @@ import org.springframework.context.annotation.Configuration;
 
 import java.io.InputStream;
 import java.security.KeyFactory;
-import java.security.KeyPair;
-import java.security.KeyStore;
 import java.security.interfaces.RSAPrivateKey;
 import java.security.interfaces.RSAPublicKey;
 import java.security.spec.PKCS8EncodedKeySpec;

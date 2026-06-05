@@ -1,6 +1,6 @@
-package io.github.nivaldosilva.agendador_tarefas.validation;
+package io.github.nivaldosilva.agendador_tarefas.infrastructure.validation;
 
-import io.github.nivaldosilva.agendador_tarefas.dto.request.AtualizarTarefaRequest;
+import io.github.nivaldosilva.agendador_tarefas.application.dto.request.AtualizarTarefaRequest;
 import jakarta.validation.ConstraintValidator;
 import jakarta.validation.ConstraintValidatorContext;
 

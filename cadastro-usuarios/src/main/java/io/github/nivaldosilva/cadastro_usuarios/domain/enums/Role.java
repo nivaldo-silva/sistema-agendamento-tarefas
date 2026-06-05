@@ -1,4 +1,4 @@
-package io.github.nivaldosilva.cadastro_usuarios.enums;
+package io.github.nivaldosilva.cadastro_usuarios.domain.enums;
 
 import lombok.Getter;
 
@@ -11,10 +11,10 @@ public enum Role {
     private final String descricao;
 
     Role(String descricao) {
-        this.descricao = descricao;
+		this.descricao = descricao;
     }
 
     public String getAuthority() {
-        return "ROLE_" + this.name();
+		return "ROLE_" + this.name();
     }
 }

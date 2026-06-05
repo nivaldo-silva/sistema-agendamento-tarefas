@@ -1,4 +1,4 @@
-package io.github.nivaldosilva.cadastro_usuarios.web;
+package io.github.nivaldosilva.cadastro_usuarios.entrypoint.controller;
 
 import com.nimbusds.jose.jwk.JWKSet;
 import lombok.RequiredArgsConstructor;
@@ -9,13 +9,12 @@ import java.util.Map;
 
 @RestController
 @RequiredArgsConstructor
-public class JwkSetEndpoint {
+public class JwksController {
 
     private final JWKSet jwkSet;
 
     @GetMapping("/.well-known/jwks.json")
     public Map<String, Object> keys() {
-       
         return this.jwkSet.toJSONObject();
     }
 }

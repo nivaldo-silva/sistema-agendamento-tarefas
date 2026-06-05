@@ -1,9 +1,10 @@
-package io.github.nivaldosilva.cadastro_usuarios.security;
+package io.github.nivaldosilva.cadastro_usuarios.application.service;
 
-import io.github.nivaldosilva.cadastro_usuarios.dto.request.LoginRequest;
-import io.github.nivaldosilva.cadastro_usuarios.dto.response.LoginResponse;
-import io.github.nivaldosilva.cadastro_usuarios.entity.Usuario;
-import io.github.nivaldosilva.cadastro_usuarios.repository.UsuarioRepository;
+import io.github.nivaldosilva.cadastro_usuarios.application.dto.request.LoginRequest;
+import io.github.nivaldosilva.cadastro_usuarios.application.dto.response.LoginResponse;
+import io.github.nivaldosilva.cadastro_usuarios.domain.entity.Usuario;
+import io.github.nivaldosilva.cadastro_usuarios.infrastructure.repository.UsuarioRepository;
+import io.github.nivaldosilva.cadastro_usuarios.infrastructure.security.JwtTokenService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.authentication.*;
@@ -15,10 +16,10 @@ import org.springframework.stereotype.Service;
 @Service
 @RequiredArgsConstructor
 @Slf4j
-public class AuthenticationService {
+public class AuthService {
 
     private final AuthenticationManager authenticationManager;
-    private final TokenService tokenGenerator;
+    private final JwtTokenService tokenGenerator;
     private final UsuarioRepository usuarioRepository;
     private final JwtDecoder jwtDecoder;
 

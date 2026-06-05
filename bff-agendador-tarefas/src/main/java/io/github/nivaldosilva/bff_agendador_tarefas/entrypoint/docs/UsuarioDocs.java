@@ -1,9 +1,9 @@
-package io.github.nivaldosilva.bff_agendador_tarefas.docs;
+package io.github.nivaldosilva.bff_agendador_tarefas.entrypoint.docs;
 
-import io.github.nivaldosilva.bff_agendador_tarefas.dto.request.LoginRequest;
-import io.github.nivaldosilva.bff_agendador_tarefas.dto.request.RegistroUsuarioRequest;
-import io.github.nivaldosilva.bff_agendador_tarefas.dto.response.LoginResponse;
-import io.github.nivaldosilva.bff_agendador_tarefas.dto.response.UsuarioResponse;
+import io.github.nivaldosilva.bff_agendador_tarefas.application.dto.request.LoginRequest;
+import io.github.nivaldosilva.bff_agendador_tarefas.application.dto.request.RegistroUsuarioRequest;
+import io.github.nivaldosilva.bff_agendador_tarefas.application.dto.response.LoginResponse;
+import io.github.nivaldosilva.bff_agendador_tarefas.application.dto.response.UsuarioResponse;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.media.Content;

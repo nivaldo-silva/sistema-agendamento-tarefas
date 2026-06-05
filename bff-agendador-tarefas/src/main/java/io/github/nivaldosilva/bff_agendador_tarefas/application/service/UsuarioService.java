@@ -1,10 +1,10 @@
-package io.github.nivaldosilva.bff_agendador_tarefas.service;
+package io.github.nivaldosilva.bff_agendador_tarefas.application.service;
 
-import io.github.nivaldosilva.bff_agendador_tarefas.client.UsuarioClient;
-import io.github.nivaldosilva.bff_agendador_tarefas.dto.request.LoginRequest;
-import io.github.nivaldosilva.bff_agendador_tarefas.dto.request.RegistroUsuarioRequest;
-import io.github.nivaldosilva.bff_agendador_tarefas.dto.response.LoginResponse;
-import io.github.nivaldosilva.bff_agendador_tarefas.dto.response.UsuarioResponse;
+import io.github.nivaldosilva.bff_agendador_tarefas.infrastructure.client.UsuarioClient;
+import io.github.nivaldosilva.bff_agendador_tarefas.application.dto.request.LoginRequest;
+import io.github.nivaldosilva.bff_agendador_tarefas.application.dto.request.RegistroUsuarioRequest;
+import io.github.nivaldosilva.bff_agendador_tarefas.application.dto.response.LoginResponse;
+import io.github.nivaldosilva.bff_agendador_tarefas.application.dto.response.UsuarioResponse;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;

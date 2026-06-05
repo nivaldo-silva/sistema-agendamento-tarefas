@@ -1,4 +1,4 @@
-package io.github.nivaldosilva.bff_agendador_tarefas.config;
+package io.github.nivaldosilva.bff_agendador_tarefas.infrastructure.config;
 
 import io.swagger.v3.oas.annotations.enums.SecuritySchemeType;
 import io.swagger.v3.oas.annotations.security.SecurityScheme;

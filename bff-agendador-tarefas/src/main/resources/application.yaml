@@ -4,6 +4,9 @@ server:
 spring:
   application:
     name: bff-agendador-tarefas
+  output:
+    ansi:
+      enabled: ALWAYS
   security:
     oauth2:
       resourceserver:
@@ -30,3 +33,12 @@ resilience4j:
         waitDurationInOpenState: 10s
         failureRateThreshold: 50
         eventConsumerBufferSize: 10
+
+logging:
+  pattern:
+    console: '%clr(%d{dd-MM-yyyy HH:mm:ss}){faint} %clr(%5p) %clr([%t]){faint} %clr(%-40.40logger){cyan} %clr(:){yellow} %m%n'
+  level:
+    root: INFO
+    io.github.nivaldosilva: DEBUG
+    org.springframework.web: DEBUG
+    org.springframework.security: DEBUG

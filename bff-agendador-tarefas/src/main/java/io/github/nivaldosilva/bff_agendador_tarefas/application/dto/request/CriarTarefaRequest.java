@@ -1,10 +1,10 @@
-package io.github.nivaldosilva.bff_agendador_tarefas.dto.request;
+package io.github.nivaldosilva.bff_agendador_tarefas.application.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.github.nivaldosilva.bff_agendador_tarefas.enums.Prioridade;
-import io.github.nivaldosilva.bff_agendador_tarefas.enums.Recorrencia;
-import io.github.nivaldosilva.bff_agendador_tarefas.enums.StatusTarefa;
+import io.github.nivaldosilva.bff_agendador_tarefas.infrastructure.enums.Prioridade;
+import io.github.nivaldosilva.bff_agendador_tarefas.infrastructure.enums.Recorrencia;
+import io.github.nivaldosilva.bff_agendador_tarefas.infrastructure.enums.StatusTarefa;
 import io.swagger.v3.oas.annotations.media.Schema;
 import jakarta.validation.constraints.*;
 import lombok.Builder;

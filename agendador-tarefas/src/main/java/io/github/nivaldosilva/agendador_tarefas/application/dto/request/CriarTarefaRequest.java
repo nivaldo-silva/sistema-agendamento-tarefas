@@ -1,18 +1,24 @@
-package io.github.nivaldosilva.agendador_tarefas.dto.request;
+package io.github.nivaldosilva.agendador_tarefas.application.dto.request;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.github.nivaldosilva.agendador_tarefas.enums.*;
+import io.github.nivaldosilva.agendador_tarefas.domain.enums.Prioridade;
+import io.github.nivaldosilva.agendador_tarefas.domain.enums.Recorrencia;
+import io.github.nivaldosilva.agendador_tarefas.domain.enums.StatusTarefa;
+import io.github.nivaldosilva.agendador_tarefas.infrastructure.validation.DataLimiteValida;
 import jakarta.validation.constraints.*;
 import lombok.Builder;
 import java.time.LocalDateTime;
 
 @Builder
-public record AtualizarParcialTarefaRequest(
+@DataLimiteValida
+public record CriarTarefaRequest(
 
+       @NotBlank(message = "O título é obrigatório")
         @Size(min = 3, max = 150, message = "O título deve ter entre 3 e 150 caracteres")
         String titulo,
 
+        @NotBlank(message = "A descrição é obrigatória")
         @Size(min = 10, max = 1000, message = "A descrição deve ter entre 10 e 1000 caracteres")
         String descricao,
 
@@ -21,11 +27,14 @@ public record AtualizarParcialTarefaRequest(
 
         Recorrencia recorrencia,
 
+        @NotNull(message = "A prioridade é obrigatória")
         Prioridade prioridade,
 
+        @NotNull(message = "O status da tarefa é obrigatório")
         StatusTarefa status,
 
-        @Future(message = "A data do evento deve ser no futuro") 
+        @NotNull(message = "A data do evento é obrigatória")
+        @Future(message = "A data do evento deve ser no futuro")
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
         @JsonProperty("data_evento")
         LocalDateTime dataEvento,
@@ -34,7 +43,8 @@ public record AtualizarParcialTarefaRequest(
         @JsonProperty("tempo_estimado_minutos")
         Integer tempoEstimadoMinutos,
 
-        @Future(message = "A data limite deve ser no futuro") 
+        @NotNull(message = "A data limite é obrigatória")
+        @Future(message = "A data limite deve ser no futuro")
         @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd/MM/yyyy HH:mm:ss")
         @JsonProperty("data_limite")
         LocalDateTime dataLimite

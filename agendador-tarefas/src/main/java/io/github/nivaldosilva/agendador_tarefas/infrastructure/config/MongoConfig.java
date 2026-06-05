@@ -1,4 +1,4 @@
-package io.github.nivaldosilva.agendador_tarefas.config;
+package io.github.nivaldosilva.agendador_tarefas.infrastructure.config;
 
 import org.springframework.context.annotation.Configuration;
 import org.springframework.data.mongodb.config.EnableMongoAuditing;

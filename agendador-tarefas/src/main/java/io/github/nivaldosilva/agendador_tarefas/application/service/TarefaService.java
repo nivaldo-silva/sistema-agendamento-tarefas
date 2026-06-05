@@ -1,17 +1,17 @@
-package io.github.nivaldosilva.agendador_tarefas.service;
+package io.github.nivaldosilva.agendador_tarefas.application.service;
 
-import io.github.nivaldosilva.agendador_tarefas.client.NotificacaoClient;
-import io.github.nivaldosilva.agendador_tarefas.client.dto.NotificacaoRequest;
-import io.github.nivaldosilva.agendador_tarefas.dto.request.AtualizarParcialTarefaRequest;
-import io.github.nivaldosilva.agendador_tarefas.dto.request.AtualizarTarefaRequest;
-import io.github.nivaldosilva.agendador_tarefas.dto.request.CriarTarefaRequest;
-import io.github.nivaldosilva.agendador_tarefas.dto.response.TarefaResponse;
-import io.github.nivaldosilva.agendador_tarefas.dto.response.UsuarioResponse;
-import io.github.nivaldosilva.agendador_tarefas.entity.Tarefa;
-import io.github.nivaldosilva.agendador_tarefas.enums.StatusNotificacao;
-import io.github.nivaldosilva.agendador_tarefas.exception.ResourceNotFoundException;
-import io.github.nivaldosilva.agendador_tarefas.mappers.TarefasMapper;
-import io.github.nivaldosilva.agendador_tarefas.repository.TarefaRepository;
+import io.github.nivaldosilva.agendador_tarefas.infrastructure.client.NotificacaoClient;
+import io.github.nivaldosilva.agendador_tarefas.infrastructure.client.dto.request.NotificacaoRequest;
+import io.github.nivaldosilva.agendador_tarefas.application.dto.request.AtualizarParcialTarefaRequest;
+import io.github.nivaldosilva.agendador_tarefas.application.dto.request.AtualizarTarefaRequest;
+import io.github.nivaldosilva.agendador_tarefas.application.dto.request.CriarTarefaRequest;
+import io.github.nivaldosilva.agendador_tarefas.application.dto.response.TarefaResponse;
+import io.github.nivaldosilva.agendador_tarefas.application.dto.response.UsuarioResponse;
+import io.github.nivaldosilva.agendador_tarefas.domain.entity.Tarefa;
+import io.github.nivaldosilva.agendador_tarefas.domain.enums.StatusNotificacao;
+import io.github.nivaldosilva.agendador_tarefas.application.exception.RecursoNaoEncontradoException;
+import io.github.nivaldosilva.agendador_tarefas.application.mappers.TarefasMapper;
+import io.github.nivaldosilva.agendador_tarefas.infrastructure.repository.TarefaRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.lang.NonNull;
@@ -89,7 +89,7 @@ public class TarefaService {
     @Transactional
     public void deletarTarefa(@NonNull String tarefaId) {
         if (!tarefaRepository.existsById(tarefaId)) {
-            throw new ResourceNotFoundException("Tarefa com id " + tarefaId + " não encontrada.");
+            throw new RecursoNaoEncontradoException("Tarefa com id " + tarefaId + " não encontrada.");
         }
         tarefaRepository.deleteById(tarefaId);
     }
@@ -142,7 +142,7 @@ public class TarefaService {
 
     public Tarefa findById(@NonNull String tarefaId) {
         return tarefaRepository.findById(tarefaId)
-                .orElseThrow(() -> new ResourceNotFoundException(
+                .orElseThrow(() -> new RecursoNaoEncontradoException(
                         "Tarefa com id " + tarefaId + " não encontrada."));
     }
 

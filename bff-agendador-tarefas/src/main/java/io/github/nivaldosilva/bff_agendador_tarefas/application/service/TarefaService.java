@@ -1,12 +1,12 @@
-package io.github.nivaldosilva.bff_agendador_tarefas.service;
+package io.github.nivaldosilva.bff_agendador_tarefas.application.service;
 
-import io.github.nivaldosilva.bff_agendador_tarefas.client.NotificacaoClient;
-import io.github.nivaldosilva.bff_agendador_tarefas.client.TarefaClient;
-import io.github.nivaldosilva.bff_agendador_tarefas.client.UsuarioClient;
-import io.github.nivaldosilva.bff_agendador_tarefas.dto.request.CriarTarefaRequest;
-import io.github.nivaldosilva.bff_agendador_tarefas.dto.request.NotificacaoRequest;
-import io.github.nivaldosilva.bff_agendador_tarefas.dto.response.TarefaResponse;
-import io.github.nivaldosilva.bff_agendador_tarefas.dto.response.UsuarioResponse;
+import io.github.nivaldosilva.bff_agendador_tarefas.infrastructure.client.NotificacaoClient;
+import io.github.nivaldosilva.bff_agendador_tarefas.infrastructure.client.TarefaClient;
+import io.github.nivaldosilva.bff_agendador_tarefas.infrastructure.client.UsuarioClient;
+import io.github.nivaldosilva.bff_agendador_tarefas.application.dto.request.CriarTarefaRequest;
+import io.github.nivaldosilva.bff_agendador_tarefas.application.dto.request.NotificacaoRequest;
+import io.github.nivaldosilva.bff_agendador_tarefas.application.dto.response.TarefaResponse;
+import io.github.nivaldosilva.bff_agendador_tarefas.application.dto.response.UsuarioResponse;
 import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

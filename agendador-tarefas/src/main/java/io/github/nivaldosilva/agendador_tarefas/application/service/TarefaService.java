@@ -40,10 +40,8 @@ public class TarefaService {
         log.info("Criando tarefa para o usuário: {}", emailUsuario);
 
         tarefa.setEmailUsuario(emailUsuario);
-
         var tarefaSalva = tarefaRepository.save(tarefa);
         log.info("Tarefa salva com ID: {}, Email: {}", tarefaSalva.getId(), tarefaSalva.getEmailUsuario());
-
 
         if (tarefaSalva.getEmailUsuario() != null && !tarefaSalva.getEmailUsuario().isBlank()) {
             enviarNotificacaoAsync(tarefaSalva);

@@ -31,5 +31,6 @@ public interface TarefaClient {
     ResponseEntity<TarefaResponse> concluirTarefa(@RequestHeader("Authorization") String authorizationHeader, @PathVariable("id") String id);
 
     @PatchMapping("/tarefas/{id}/status-notificacao/{status}")
-    ResponseEntity<Void> alteraStatusNotificacao(@RequestHeader("Authorization") String authorizationHeader, @PathVariable("id") String id, @PathVariable("status") StatusNotificacao status);
+    ResponseEntity<Void> alteraStatusNotificacao(@RequestHeader("Authorization") String authorizationHeader,
+												 @PathVariable("id") String id, @PathVariable("status") StatusNotificacao status);
 }

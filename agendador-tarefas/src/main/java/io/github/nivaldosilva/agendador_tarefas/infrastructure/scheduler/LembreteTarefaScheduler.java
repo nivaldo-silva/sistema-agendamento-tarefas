@@ -22,9 +22,8 @@ public class LembreteTarefaScheduler {
 
     @Scheduled(cron = "${cron.horario:0 */5 * * * *}")
     public void notificarTarefasProximas() {
-        log.info("========================================");
+
         log.info("Iniciando job de notificação de tarefas");
-        log.info("========================================");
 
         try {
             LocalDateTime agora = LocalDateTime.now();
@@ -41,9 +40,7 @@ public class LembreteTarefaScheduler {
             } else {
                 tarefas.forEach(this::processarNotificacao);
             }
-
             log.info("Job de notificação finalizado com sucesso");
-
         } catch (Exception e) {
             log.error("ERRO durante execução do job", e);
         }

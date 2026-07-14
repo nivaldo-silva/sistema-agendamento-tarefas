@@ -3,10 +3,10 @@ package io.github.nivaldosilva.agendador_tarefas.application.dto.response;
 import com.fasterxml.jackson.annotation.JsonFormat;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import io.github.nivaldosilva.agendador_tarefas.domain.enums.Prioridade;
-import io.github.nivaldosilva.agendador_tarefas.domain.enums.Recorrencia;
-import io.github.nivaldosilva.agendador_tarefas.domain.enums.StatusNotificacao;
-import io.github.nivaldosilva.agendador_tarefas.domain.enums.StatusTarefa;
+import io.github.nivaldosilva.agendador_tarefas.database.enums.Prioridade;
+import io.github.nivaldosilva.agendador_tarefas.database.enums.Recorrencia;
+import io.github.nivaldosilva.agendador_tarefas.database.enums.StatusNotificacao;
+import io.github.nivaldosilva.agendador_tarefas.database.enums.StatusTarefa;
 import lombok.Builder;
 import java.time.LocalDateTime;
 

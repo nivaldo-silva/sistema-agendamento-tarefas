@@ -2,7 +2,7 @@ package io.github.nivaldosilva.cadastro_usuarios.application.mappers;
 
 import io.github.nivaldosilva.cadastro_usuarios.application.dto.request.EnderecoRequest;
 import io.github.nivaldosilva.cadastro_usuarios.application.dto.response.EnderecoResponse;
-import io.github.nivaldosilva.cadastro_usuarios.domain.entity.Endereco;
+import io.github.nivaldosilva.cadastro_usuarios.database.entity.Endereco;
 import lombok.experimental.UtilityClass;
 import java.util.List;
 

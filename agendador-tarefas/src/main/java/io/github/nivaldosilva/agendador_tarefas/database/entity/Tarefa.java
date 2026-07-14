@@ -1,10 +1,10 @@
-package io.github.nivaldosilva.agendador_tarefas.domain.entity;
+package io.github.nivaldosilva.agendador_tarefas.database.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
-import io.github.nivaldosilva.agendador_tarefas.domain.enums.Prioridade;
-import io.github.nivaldosilva.agendador_tarefas.domain.enums.Recorrencia;
-import io.github.nivaldosilva.agendador_tarefas.domain.enums.StatusNotificacao;
-import io.github.nivaldosilva.agendador_tarefas.domain.enums.StatusTarefa;
+import io.github.nivaldosilva.agendador_tarefas.database.enums.Prioridade;
+import io.github.nivaldosilva.agendador_tarefas.database.enums.Recorrencia;
+import io.github.nivaldosilva.agendador_tarefas.database.enums.StatusNotificacao;
+import io.github.nivaldosilva.agendador_tarefas.database.enums.StatusTarefa;
 import jakarta.validation.constraints.*;
 import lombok.*;
 import org.springframework.data.annotation.CreatedDate;

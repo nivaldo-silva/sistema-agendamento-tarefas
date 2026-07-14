@@ -1,7 +1,7 @@
 package io.github.nivaldosilva.cadastro_usuarios.infrastructure.security;
 
-import io.github.nivaldosilva.cadastro_usuarios.domain.entity.Usuario;
-import io.github.nivaldosilva.cadastro_usuarios.infrastructure.repository.UsuarioRepository;
+import io.github.nivaldosilva.cadastro_usuarios.database.entity.Usuario;
+import io.github.nivaldosilva.cadastro_usuarios.database.repository.UsuarioRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.security.core.userdetails.UserDetails;

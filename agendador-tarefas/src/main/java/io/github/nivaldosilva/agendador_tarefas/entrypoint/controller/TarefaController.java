@@ -5,7 +5,7 @@ import io.github.nivaldosilva.agendador_tarefas.application.dto.request.Atualiza
 import io.github.nivaldosilva.agendador_tarefas.application.dto.request.CriarTarefaRequest;
 import io.github.nivaldosilva.agendador_tarefas.application.dto.response.TarefaResponse;
 import io.github.nivaldosilva.agendador_tarefas.application.dto.response.UsuarioResponse;
-import io.github.nivaldosilva.agendador_tarefas.domain.enums.StatusNotificacao;
+import io.github.nivaldosilva.agendador_tarefas.database.enums.StatusNotificacao;
 import io.github.nivaldosilva.agendador_tarefas.application.service.TarefaService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

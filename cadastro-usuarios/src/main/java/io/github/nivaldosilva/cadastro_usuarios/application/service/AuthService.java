@@ -2,8 +2,8 @@ package io.github.nivaldosilva.cadastro_usuarios.application.service;
 
 import io.github.nivaldosilva.cadastro_usuarios.application.dto.request.LoginRequest;
 import io.github.nivaldosilva.cadastro_usuarios.application.dto.response.LoginResponse;
-import io.github.nivaldosilva.cadastro_usuarios.domain.entity.Usuario;
-import io.github.nivaldosilva.cadastro_usuarios.infrastructure.repository.UsuarioRepository;
+import io.github.nivaldosilva.cadastro_usuarios.database.entity.Usuario;
+import io.github.nivaldosilva.cadastro_usuarios.database.repository.UsuarioRepository;
 import io.github.nivaldosilva.cadastro_usuarios.infrastructure.security.JwtTokenService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

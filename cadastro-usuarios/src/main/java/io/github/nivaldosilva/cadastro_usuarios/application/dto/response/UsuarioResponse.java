@@ -1,7 +1,7 @@
 package io.github.nivaldosilva.cadastro_usuarios.application.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
-import io.github.nivaldosilva.cadastro_usuarios.domain.enums.Role;
+import io.github.nivaldosilva.cadastro_usuarios.database.enums.Role;
 import lombok.Builder;
 
 import java.util.List;

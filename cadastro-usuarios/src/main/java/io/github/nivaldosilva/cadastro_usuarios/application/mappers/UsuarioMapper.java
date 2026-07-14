@@ -2,10 +2,10 @@ package io.github.nivaldosilva.cadastro_usuarios.application.mappers;
 
 import io.github.nivaldosilva.cadastro_usuarios.application.dto.request.RegistroUsuarioRequest;
 import io.github.nivaldosilva.cadastro_usuarios.application.dto.response.UsuarioResponse;
-import io.github.nivaldosilva.cadastro_usuarios.domain.entity.Endereco;
-import io.github.nivaldosilva.cadastro_usuarios.domain.entity.Telefone;
-import io.github.nivaldosilva.cadastro_usuarios.domain.entity.Usuario;
-import io.github.nivaldosilva.cadastro_usuarios.domain.enums.Role;
+import io.github.nivaldosilva.cadastro_usuarios.database.entity.Endereco;
+import io.github.nivaldosilva.cadastro_usuarios.database.entity.Telefone;
+import io.github.nivaldosilva.cadastro_usuarios.database.entity.Usuario;
+import io.github.nivaldosilva.cadastro_usuarios.database.enums.Role;
 import lombok.experimental.UtilityClass;
 import java.util.HashSet;
 import java.util.Set;

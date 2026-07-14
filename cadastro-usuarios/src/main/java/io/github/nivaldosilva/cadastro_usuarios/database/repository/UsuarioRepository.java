@@ -1,6 +1,6 @@
-package io.github.nivaldosilva.cadastro_usuarios.infrastructure.repository;
+package io.github.nivaldosilva.cadastro_usuarios.database.repository;
 
-import io.github.nivaldosilva.cadastro_usuarios.domain.entity.Usuario;
+import io.github.nivaldosilva.cadastro_usuarios.database.entity.Usuario;
 import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 import java.util.UUID;

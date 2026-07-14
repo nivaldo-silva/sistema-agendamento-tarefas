@@ -1,6 +1,6 @@
-package io.github.nivaldosilva.cadastro_usuarios.domain.entity;
+package io.github.nivaldosilva.cadastro_usuarios.database.entity;
 
-import io.github.nivaldosilva.cadastro_usuarios.domain.enums.Role;
+import io.github.nivaldosilva.cadastro_usuarios.database.enums.Role;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;

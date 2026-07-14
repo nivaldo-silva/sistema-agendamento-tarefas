@@ -3,7 +3,7 @@ package io.github.nivaldosilva.cadastro_usuarios.infrastructure.startup;
 import io.github.nivaldosilva.cadastro_usuarios.application.dto.request.EnderecoRequest;
 import io.github.nivaldosilva.cadastro_usuarios.application.dto.request.RegistroUsuarioRequest;
 import io.github.nivaldosilva.cadastro_usuarios.application.dto.request.TelefoneRequest;
-import io.github.nivaldosilva.cadastro_usuarios.infrastructure.repository.UsuarioRepository;
+import io.github.nivaldosilva.cadastro_usuarios.database.repository.UsuarioRepository;
 import io.github.nivaldosilva.cadastro_usuarios.application.service.UsuarioService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

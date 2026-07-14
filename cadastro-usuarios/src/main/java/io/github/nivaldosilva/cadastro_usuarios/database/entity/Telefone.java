@@ -1,4 +1,4 @@
-package io.github.nivaldosilva.cadastro_usuarios.domain.entity;
+package io.github.nivaldosilva.cadastro_usuarios.database.entity;
 
 import jakarta.persistence.*;
 import lombok.*;

@@ -2,7 +2,7 @@ package io.github.nivaldosilva.cadastro_usuarios.application.mappers;
 
 import io.github.nivaldosilva.cadastro_usuarios.application.dto.request.TelefoneRequest;
 import io.github.nivaldosilva.cadastro_usuarios.application.dto.response.TelefoneResponse;
-import io.github.nivaldosilva.cadastro_usuarios.domain.entity.Telefone;
+import io.github.nivaldosilva.cadastro_usuarios.database.entity.Telefone;
 import lombok.experimental.UtilityClass;
 import java.util.List;
 

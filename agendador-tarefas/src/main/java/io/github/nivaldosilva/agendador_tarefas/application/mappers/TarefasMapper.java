@@ -4,7 +4,7 @@ import io.github.nivaldosilva.agendador_tarefas.application.dto.request.Atualiza
 import io.github.nivaldosilva.agendador_tarefas.application.dto.request.AtualizarTarefaRequest;
 import io.github.nivaldosilva.agendador_tarefas.application.dto.request.CriarTarefaRequest;
 import io.github.nivaldosilva.agendador_tarefas.application.dto.response.TarefaResponse;
-import io.github.nivaldosilva.agendador_tarefas.domain.entity.Tarefa;
+import io.github.nivaldosilva.agendador_tarefas.database.entity.Tarefa;
 import lombok.experimental.UtilityClass;
 import java.util.Optional;
 

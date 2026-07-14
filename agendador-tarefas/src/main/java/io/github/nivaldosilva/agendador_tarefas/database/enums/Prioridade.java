@@ -1,4 +1,4 @@
-package io.github.nivaldosilva.agendador_tarefas.domain.enums;
+package io.github.nivaldosilva.agendador_tarefas.database.enums;
 
 import lombok.Getter;
 

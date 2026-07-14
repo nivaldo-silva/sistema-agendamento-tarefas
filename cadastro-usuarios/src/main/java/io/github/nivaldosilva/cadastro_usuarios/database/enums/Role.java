@@ -1,4 +1,4 @@
-package io.github.nivaldosilva.cadastro_usuarios.domain.enums;
+package io.github.nivaldosilva.cadastro_usuarios.database.enums;
 
 import lombok.Getter;
 

@@ -1,6 +1,6 @@
 package io.github.nivaldosilva.agendador_tarefas.infrastructure.security;
 
-import io.github.nivaldosilva.agendador_tarefas.infrastructure.repository.TarefaRepository;
+import io.github.nivaldosilva.agendador_tarefas.database.repository.TarefaRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.lang.NonNull;
 import org.springframework.security.core.Authentication;

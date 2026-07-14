@@ -7,11 +7,11 @@ import io.github.nivaldosilva.agendador_tarefas.application.dto.request.Atualiza
 import io.github.nivaldosilva.agendador_tarefas.application.dto.request.CriarTarefaRequest;
 import io.github.nivaldosilva.agendador_tarefas.application.dto.response.TarefaResponse;
 import io.github.nivaldosilva.agendador_tarefas.application.dto.response.UsuarioResponse;
-import io.github.nivaldosilva.agendador_tarefas.domain.entity.Tarefa;
-import io.github.nivaldosilva.agendador_tarefas.domain.enums.StatusNotificacao;
+import io.github.nivaldosilva.agendador_tarefas.database.entity.Tarefa;
+import io.github.nivaldosilva.agendador_tarefas.database.enums.StatusNotificacao;
 import io.github.nivaldosilva.agendador_tarefas.application.exception.RecursoNaoEncontradoException;
 import io.github.nivaldosilva.agendador_tarefas.application.mappers.TarefasMapper;
-import io.github.nivaldosilva.agendador_tarefas.infrastructure.repository.TarefaRepository;
+import io.github.nivaldosilva.agendador_tarefas.database.repository.TarefaRepository;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.lang.NonNull;

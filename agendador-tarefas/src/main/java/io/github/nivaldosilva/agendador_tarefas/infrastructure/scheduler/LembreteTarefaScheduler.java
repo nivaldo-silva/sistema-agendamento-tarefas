@@ -69,7 +69,7 @@ public class LembreteTarefaScheduler {
                         StatusNotificacao.ENVIADA
                 );
 
-                log.info("âœ“ Notificação enviada com sucesso para tarefa {}", tarefa.getId());
+                log.info("Notificação enviada com sucesso para tarefa {}", tarefa.getId());
 
             } catch (Exception e) {
                 log.error(" Falha ao notificar tarefa {}: {}",

@@ -2,8 +2,8 @@ package io.github.nivaldosilva.agendador_tarefas.infrastructure.scheduler;
 
 import io.github.nivaldosilva.agendador_tarefas.infrastructure.client.NotificacaoClient;
 import io.github.nivaldosilva.agendador_tarefas.infrastructure.client.dto.request.NotificacaoRequest;
-import io.github.nivaldosilva.agendador_tarefas.database.entity.Tarefa;
-import io.github.nivaldosilva.agendador_tarefas.database.enums.StatusNotificacao;
+import io.github.nivaldosilva.agendador_tarefas.domain.entity.Tarefa;
+import io.github.nivaldosilva.agendador_tarefas.domain.enums.StatusNotificacao;
 import io.github.nivaldosilva.agendador_tarefas.application.service.TarefaService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;

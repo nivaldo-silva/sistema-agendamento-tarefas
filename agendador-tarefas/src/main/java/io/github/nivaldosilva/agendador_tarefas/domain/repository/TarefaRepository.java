@@ -1,7 +1,7 @@
-package io.github.nivaldosilva.agendador_tarefas.database.repository;
+package io.github.nivaldosilva.agendador_tarefas.domain.repository;
 
-import io.github.nivaldosilva.agendador_tarefas.database.entity.Tarefa;
-import io.github.nivaldosilva.agendador_tarefas.database.enums.StatusNotificacao;
+import io.github.nivaldosilva.agendador_tarefas.domain.entity.Tarefa;
+import io.github.nivaldosilva.agendador_tarefas.domain.enums.StatusNotificacao;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.data.mongodb.repository.Query;
 import org.springframework.stereotype.Repository;
